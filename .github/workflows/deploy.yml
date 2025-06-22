@@ -39,4 +39,9 @@ jobs:
           sudo docker pull aryanrarh/paytm-project:latest
           sudo docker stop web-app || true
           sudo docker rm web-app || true
-          sudo docker run -d --name web-app -p 3005:3000 aryanrarh/paytm-project:latest
+          sudo docker run -d \
+          --name web-app \
+          -p 3005:3000 \
+           --env-file /home/ubuntu/.env \
+           --restart unless-stopped \
+            aryanrarh/paytm-project:latest
