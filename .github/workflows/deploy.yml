@@ -42,6 +42,7 @@ jobs:
           sudo docker run -d \
           --name web-app \
           -p 3005:3000 \
+          -e DATABASE_URL="${{ secrets.DB_URL }}" \
            --env-file /home/ubuntu/.env \
            --restart unless-stopped \
             aryanrarh/paytm-project:latest
