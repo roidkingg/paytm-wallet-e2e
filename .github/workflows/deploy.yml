@@ -43,6 +43,9 @@ jobs:
           --name web-app \
           -p 3005:3000 \
           -e DATABASE_URL="${{ secrets.DB_URL }}" \
+          -e NEXTAUTH_URL="${{ secrets.NEXTAUTH_URL }}" \
+          -e NEXTAUTH_SECRET="${{ secrets.NEXTAUTH_SECRET }}" \
+          -e JWT_SECRET="${{ secrets.JWT_SECRET }}" \
            --env-file /home/ubuntu/.env \
            --restart unless-stopped \
             aryanrarh/paytm-project:latest
